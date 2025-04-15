@@ -1,5 +1,23 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #141414;
+  color: #ffffff;
+  position: relative;
+}
+
+.main-content {
+  display: flex;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #141414;
+  padding: 20px 20px 20px 0; /* Reduced left padding */
 }
 
 .App-logo {
@@ -35,4 +53,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.content-area {
+  flex: 1;
+  min-height: calc(100vh - 60px);
+  background-color: #f5f5f5;
 }

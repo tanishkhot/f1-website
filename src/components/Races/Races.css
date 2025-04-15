@@ -1,0 +1,149 @@
+.races-container {
+  flex: 1;
+  padding: 30px;
+  margin-left: 220px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  min-height: calc(100vh - 60px);
+}
+
+.season-heading {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #e10600;
+  padding-bottom: 10px;
+  width: fit-content;
+}
+
+.races-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 0.5fr 0.8fr 2fr 1.2fr 1.2fr 2fr;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-cell {
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 0.5fr 0.8fr 2fr 1.2fr 1.2fr 2fr;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.table-row.even {
+  background-color: #ffffff;
+}
+
+.table-row.odd {
+  background-color: #f8f9fa;
+}
+
+.cell {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+}
+
+.cell:first-child {
+  font-weight: 600;
+  color: #e10600;
+}
+
+.cell:nth-child(2) {
+  font-size: 24px;
+}
+
+.cell:nth-child(3) {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.cell:nth-child(4),
+.cell:nth-child(5) {
+  font-family: monospace;
+  color: #666;
+}
+
+.cell:last-child {
+  color: #009688;
+  font-weight: 500;
+}
+
+/* Add responsive design */
+@media (max-width: 1200px) {
+  .races-container {
+    padding: 20px;
+  }
+  
+  .table-header,
+  .table-row {
+    grid-template-columns: 0.5fr 0.8fr 1.5fr 1fr 1fr 1.5fr;
+  }
+}
+
+/* Add animation for row hover */
+.table-row {
+  position: relative;
+}
+
+.table-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #e10600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.table-row:hover::before {
+  opacity: 1;
+}
+
+/* Add custom scrollbar */
+.races-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.races-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.races-container::-webkit-scrollbar-thumb {
+  background: #e10600;
+  border-radius: 4px;
+}
+
+.races-container::-webkit-scrollbar-thumb:hover {
+  background: #cc0500;
+}
